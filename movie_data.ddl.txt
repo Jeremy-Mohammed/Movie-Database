@@ -1,0 +1,111 @@
+INSERT INTO movie (id, title, release_date, rating, budget, gross) VALUES
+    (1, 'Avatar', '2009-12-16', 95, 237000000, 2847246203),
+    (2, 'Avengers: Endgame', '2019-04-24', 92, 356000000, 2797501328),
+    (3, 'Titanic', '1997-12-19', 98, 200000000, 2201647264),
+    (4, 'Star Wars: The Force Awakens', '2015-12-16', 85, 245000000, 2069521700),
+    (5, 'Avengers: Infinity War', '2018-04-25', 97, 316000000, 2048359754);
+
+INSERT INTO location (id, city, state, country) VALUES
+    (1, 'Toronto', 'Ontario', 'Canada'),
+    (2, 'Los Angeles', 'California', 'US'),
+    (3, 'London', 'England', 'UK'),
+    (4, 'Miami', 'Florida', 'US'),
+    (5, 'Vancouver', 'British Columbia', 'Canada’);
+
+INSERT INTO university (id, name, population, color, private) VALUES
+    (1, 'Ontario Tech University', 25000, 'Orange', FALSE),
+    (2, 'Waterloo University', 15000, 'Blue', FALSE),
+    (3, 'Michigan Institute of Technology', 10000, 'Blue', TRUE),
+    (4, 'University of Toronto', 15000, 'Yellow', FALSE),
+    (5, 'Queens University', 30000, 'Purple', FALSE);
+
+INSERT INTO department (dept_id, university_id, name, population) VALUES
+    (1, 1,'Applied Science and Engineering', 1400),
+    (2, 2,'Arts and Science', 2500),
+    (3, 3,'Law', 800),
+    (4, 4,'Medicine', 1500),
+    (5, 5,'Music', 1000);
+
+INSERT INTO actor (id, home_town, university_id, dept_id, first_name, last_name, date_of_birth ,eye_color) VALUES
+    (1, 1, 1, 1, 'Robert', 'Downey', '1970-05-12', 'Green'),
+    (2, 2, 2, 2,'Chris', 'Evans', '1977-09-15', 'Brown'), 
+    (3, 3, 3, 3, 'Chris', 'Hemsworth', '1982-03-07', 'Blue'),
+    (4, 4, 4, 4, 'Jeremy', 'Renner', '1975-06-23', 'Brown'),
+    (5, 5, 5, 5, 'Mark', 'Ruffalo', '1972-12-31', 'Black');
+
+INSERT INTO acting_jobs (movie_id, actor_id) VALUES
+    (1,1),
+    (2,2),
+    (3,3),
+    (4,4),
+    (5,5);
+	
+INSERT INTO award (id, show, category) VALUES
+    (1, 'Grammys', 'Best Picture'),
+    (2, 'Oscars', 'Best Director'),
+    (3, 'Academy', ' Best Actor'),
+    (4, 'MTV', 'Best Actress'),
+    (5, 'American Film', 'Best Screenplay');
+
+INSERT INTO cinema (id, location_id, name, address) VALUES
+    (1, 1, ‘Landmark', '70 Dundas Road'),
+    (2, 2, 'Cineplex', '1005 Kingston Road'),
+    (3, 3, 'Landmark', '823 Queen Road'),
+    (4, 4, 'Cineplex', '12 Anderson Road'),
+    (5, 5, 'Cineplex', '937 Thickson Road');
+
+INSERT INTO director(id, home_town, university_id, dept_id,first_name,last_name,birth_year) VALUES
+    (1, 1, 1, 1, 'Jeremy', 'Johnson', 2001),
+    (2, 2, 2, 2, 'John', 'Peire', 1998),
+    (3, 3, 3, 3, 'Kyle', 'Kylie', 1965),
+    (4, 4, 4, 4, 'Omari', 'Henri', 1999),
+    (5, 5, 5, 5, 'Josh', 'Malone', 2002);
+
+INSERT INTO festival (id, name) VALUES
+    (1, 'Toronto International'),
+    (2, 'Vancouver International'),
+    (3, 'Tribeca'),
+    (4, 'Raindance'),
+    (5, 'Cannes');
+
+INSERT INTO genre (id, name, description) VALUES
+    (1, 'Action', 'protagonist or protagonists are thrust into a series of events that typically include violence, extended fighting, physical feats, rescues and frantic chases'),
+    (2, 'Adventure', 'exciting stories, with new experiences or exotic locales'),
+    (3, 'Comedy', 'make the audience laugh through amusement'),
+    (4, 'Romance', 'focus on passion, emotion, and the affectionate romantic involvement of the main characters and the journey that their love takes them'),
+    (5, 'Horror', 'seeks to elicit fear or disgust in its audience');
+
+INSERT INTO movie_genres (genre_id, movie_id) VALUES
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4),
+    (5, 5);
+
+INSERT INTO screening(festival_id, movie_id) VALUES
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4),
+    (5, 5);
+
+INSERT INTO showtime(date, time, movie_id, cinema_id, duration, price, hall_type) VALUES
+    ('2021-10-23', '17:30:00', 1, 1, '02:08:43', 8.00, 'DBOX'),
+    ('2021-10-17', '19:00:00', 2, 2, '02:31:27', 17.00, 'IMAX'),
+    ('2021-10-25', '20:45:00', 3, 3, '02:05:37', 16.50, '3D'),
+    ('2021-10-22', '22:30:00', 4, 4, '01:41:04', 9.00, '2D'),
+    ('2021-10-19', '22:15:00', 5, 5, '01:49:32', 18.00, 'IMAX 2D');
+
+INSERT INTO winner(year, award_id, movie_id) VALUES
+    (2009, 1, 1),
+    (2011, 2, 2),
+    (2014, 3, 3),
+    (2015, 4, 4),
+    (2019, 5, 5);
+	
+INSERT INTO directing_jobs (movie_id, director_id) VALUES
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4),
+    (5, 5);
